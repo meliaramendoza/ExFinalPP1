@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de Reservas</title>
+</head>
+<body>
+    <h1>Listado de Reservas</h1>
+    <ul>
+        {% for reserva in reservas %}
+        <li>Reserva {{ reserva.identificador }} - Hotel: {{ reserva.hotel.nombre }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

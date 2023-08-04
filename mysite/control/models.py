@@ -1,4 +1,3 @@
-# control/models.py
 from django.db import models
 
 class Empleado(models.Model):
@@ -16,6 +15,12 @@ class Empleado(models.Model):
     turno = models.CharField(max_length=10, choices=TURNO_CHOICES)
     horario_entrada = models.TimeField()
     horario_salida = models.TimeField()
+    activo = models.BooleanField(default=True)  # Nuevo campo
+    telefono = models.CharField(max_length=20, blank=True, null=True)  # Nuevo campo
+
+    def __str__(self):
+        return self.nombre
+
 
 class Jornada(models.Model):
     TIPO_MARCACION_CHOICES = [
